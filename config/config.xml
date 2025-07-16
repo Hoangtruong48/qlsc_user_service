@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- Database Configuration -->
+    <property name="db.url">jdbc:postgresql://localhost:5432/badminton_db</property>
+    <property name="db.username">admin</property>
+    <property name="db.password">securePassword123</property>
+
+    <!-- Application Settings -->
+    <property name="app.max_connections">50</property>
+    <property name="app.timeout_ms">5000</property>
+    <property name="app.env">production</property>
+</configuration>
