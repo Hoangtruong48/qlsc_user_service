@@ -15,5 +15,9 @@ spring:
 server:
   port: 8080
 
+logging :
+  level :
+    org.springframework.security : DEBUG
+
 jwt :
   signer_key : "H/iI+s4RM9/p2zSeTtC5u9HM9QzH1IHLZYV/yOVTwf9hCvfaxKwl19hRm0Hw3344"

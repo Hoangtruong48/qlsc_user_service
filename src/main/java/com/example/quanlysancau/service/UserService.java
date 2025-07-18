@@ -1,11 +1,11 @@
 package com.example.quanlysancau.service;
 
-import com.example.quanlysancau.request.IntrospectRequest;
-import com.example.quanlysancau.response.ApiResponse;
 import com.example.quanlysancau.entity.User;
 import com.example.quanlysancau.repo.UserRepoJpa;
+import com.example.quanlysancau.request.IntrospectRequest;
 import com.example.quanlysancau.request.RegisterAccountRequest;
 import com.example.quanlysancau.request.UserLoginRequest;
+import com.example.quanlysancau.response.ApiResponse;
 import com.example.quanlysancau.response.IntrospectResponse;
 import com.example.quanlysancau.response.UserLoginResponse;
 import com.nimbusds.jose.*;
@@ -13,7 +13,6 @@ import com.nimbusds.jose.crypto.MACSigner;
 import com.nimbusds.jose.crypto.MACVerifier;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
-import io.jsonwebtoken.JwsHeader;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -21,7 +20,6 @@ import lombok.experimental.NonFinal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -30,9 +28,7 @@ import org.springframework.util.StringUtils;
 import java.text.ParseException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
