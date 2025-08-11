@@ -3,9 +3,9 @@ package com.example.quanlysancau.controller;
 import com.example.quanlysancau.request.IntrospectRequest;
 import com.example.quanlysancau.request.RegisterAccountRequest;
 import com.example.quanlysancau.request.UserLoginRequest;
-import com.example.quanlysancau.response.ApiResponse;
 import com.example.quanlysancau.service.UserService;
 import com.nimbusds.jose.JOSEException;
+import com.qlsc.qlsc_common.response.ApiResponse;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -44,3 +44,4 @@ public class UserController {
     }
 
 }
+

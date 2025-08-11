@@ -1,7 +1,7 @@
 package com.example.quanlysancau.request;
 
 import com.example.quanlysancau.entity.User;
-import com.example.quanlysancau.util.Mappable;
+import com.qlsc.qlsc_common.mappable.Mappable;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

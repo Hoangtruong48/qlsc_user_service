@@ -32,12 +32,6 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>com.example</groupId>
-			<artifactId>qlsc_common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
@@ -98,6 +92,12 @@
 			<groupId>com.nimbusds</groupId>
 			<artifactId>nimbus-jose-jwt</artifactId>
 			<version>9.37.3</version> <!-- Kiểm tra phiên bản mới nhất -->
+		</dependency>
+
+		<dependency>
+			<groupId>com.dts</groupId>
+			<artifactId>qlsc_common</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 
 		<!-- JWT -->
