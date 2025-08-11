@@ -13,6 +13,7 @@ import java.util.Arrays;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class User {
     @Getter
     public enum UserRole {

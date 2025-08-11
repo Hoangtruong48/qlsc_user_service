@@ -22,7 +22,10 @@ import java.util.List;
 @EnableWebSecurity
 //@EnableMethodSecurity
 public class SecurityConfig {
-    private final String[] PUBLIC_ENDPOINT = {"/users/register", "/users/log-in", "/users/introspect"};
+    private final String[] PUBLIC_ENDPOINT = {
+            "/users/register", "/users/log-in", "/users/introspect",
+            "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html"
+    };
 
     @NonFinal
     @Value("${jwt.signer_key}")
@@ -30,16 +33,23 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.POST, PUBLIC_ENDPOINT).permitAll()
+        httpSecurity
+                .csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(request -> request
+                .requestMatchers(PUBLIC_ENDPOINT)
+                .permitAll()
+                .requestMatchers("/swagger-ui/**", "/v3/api-docs/**",
+                        "/swagger-resources/**", "/webjars/**")
+                .permitAll()
                 .requestMatchers(HttpMethod.GET, "/users/find-all").hasAuthority("ADMIN")
-                .anyRequest().authenticated());
+                .anyRequest().authenticated()
+        );
 
         httpSecurity.oauth2ResourceServer(oauth2 -> oauth2.jwt(jwtConfigurer -> {
             jwtConfigurer.decoder(jwtDecoder());
             jwtConfigurer.jwtAuthenticationConverter(jwtAuthenticationConverter());
         }));
 
-        httpSecurity.csrf(AbstractHttpConfigurer::disable);
         return httpSecurity.build();
     }
 

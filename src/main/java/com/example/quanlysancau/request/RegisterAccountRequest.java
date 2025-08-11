@@ -24,14 +24,14 @@ public class RegisterAccountRequest implements Mappable<User> {
     @Override
     public User toEntity() {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
-        User user = new User();
-        user.setUsername(this.getUserName());
-        user.setPasswordHash(passwordEncoder.encode(this.getPassword()));
-        user.setEmail(this.getEmail());
-        user.setPhone(this.getPhone());
-        user.setRole(this.getRole());
-        user.setStatus(this.getStatus());
-        return user;
+        return User.builder()
+                .username(this.userName)
+                .passwordHash(passwordEncoder.encode(this.password))
+                .email(this.email)
+                .phone(this.phone)
+                .role(this.role)
+                .status(this.status)
+                .build();
     }
 
     public String validate() {

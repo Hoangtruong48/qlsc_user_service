@@ -44,9 +44,9 @@ public class XmlConfigManager {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
             // Bảo mật: Ngăn chặn XXE Attack
-            factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
-            factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
-            factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+            factory.setFeature("https://apache.org/xml/features/disallow-doctype-decl", true);
+            factory.setFeature("https://xml.org/sax/features/external-general-entities", false);
+            factory.setFeature("https://xml.org/sax/features/external-parameter-entities", false);
 
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(xmlFile);
