@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class QuanlysancauApplication {
 
 	public static void main(String[] args) {
-		XmlConfigManager config = XmlConfigManager.getInstance("E:\\quanlysancau\\quanlysancau\\config\\config.xml");
+//		XmlConfigManager config = XmlConfigManager.getInstance("E:\\quanlysancau\\quanlysancau\\config\\config.xml");
 //		// Sử dụng trong toàn bộ ứng dụng
 //		String dbUrl = config.get("db.url");
 //		String dbUser = config.get("db.username");

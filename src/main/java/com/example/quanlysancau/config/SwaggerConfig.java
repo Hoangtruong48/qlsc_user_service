@@ -17,15 +17,23 @@ import java.util.List;
 @Configuration
 public class SwaggerConfig {
 
+    //    @Bean
+//    public OpenAPI customOpenAPI() {
+//        return new OpenAPI()
+//                .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
+//                .components(new Components().addSecuritySchemes("bearerAuth",
+//                        new SecurityScheme()
+//                                .type(SecurityScheme.Type.HTTP)
+//                                .scheme("bearer")
+//                                .bearerFormat("JWT")
+//                ));
+//    }
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
-                .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
-                .components(new Components().addSecuritySchemes("bearerAuth",
-                        new SecurityScheme()
-                                .type(SecurityScheme.Type.HTTP)
-                                .scheme("bearer")
-                                .bearerFormat("JWT")
-                ));
+                .info(new Info()
+                        .title("User Service API")
+                        .description("API documentation for User Service")
+                        .version("1.0"));
     }
 }
