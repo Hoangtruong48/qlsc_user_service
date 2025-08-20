@@ -18,7 +18,7 @@ public class JwtUtil {
     @Value("${jwt.signer_key}")
     String signerKey;
 
-    static long EXPIRATION_MS = 3600000;
+    static long EXPIRATION_MS = 3600000L;
 
     Key key;
 
